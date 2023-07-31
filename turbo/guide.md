@@ -12,7 +12,7 @@
 </script>
 ```
 
-### Write you JS
+### Write your JS
 ```javascript
 document.addEventListener(`turbo:load`, () => {
     // Code Here...
