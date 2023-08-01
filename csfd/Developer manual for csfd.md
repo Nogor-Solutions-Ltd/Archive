@@ -1,4 +1,4 @@
-# Manual CSFD (Customize System for Faster Development)
+# Manual for CSFD (Customize System for Faster Development)
 
 ## Table of Contents
 
@@ -155,6 +155,24 @@ this.table.routes.array = [
       },
     ];
 ```
+
+#### Custom Validation:
+``` Laravel ```
+```php
+$v = validator($request->all(), [
+    'avatar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+    'id' => 'required|integer|exists:employees,id',
+]);
+
+if ($v->fails()) return response()->json(['errors' => $v->errors()], 422);
+```
+
+``` Vue ```
+
+```js
+this.store("employee/upload/profile", formData);
+```
+
 
 #### Custom Add / Back button
 Inside the, template "create-form" , insert it [Your vue file] , and you can modify it via route.
