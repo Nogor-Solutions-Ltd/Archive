@@ -156,6 +156,64 @@ this.table.routes.array = [
     ];
 ```
 
+
+
+#### Custom Laravel PaginationIn Vue
+``` Ref: Genform [global/genform] ```
+``` Vue template ```
+```js
+<template v-for="(item, index) in laravelData.data" :key="index">
+</template>
+
+<laravel-pagination
+    :data="laravelData"
+    @pagination-change-page="getResults"
+></laravel-pagination>
+```
+``` Script ```
+```js
+ data() {
+    return {
+      laravelData: {},
+    };
+  },
+  methods: {
+    getRecords() {
+      axios
+        .get("get/employee-records", {
+          params: {
+            id: this.id,
+          },
+        })
+        .then((res) => {
+          this.data = res.data;
+        });
+    },
+    getResults(page) {
+      if (typeof page === "undefined") {
+        page = 1;
+      }
+      axios
+        .get("/get/employee-records", {
+          params: {
+            page: page,
+            id: this.id,
+          },
+        })
+        .then((res) => {
+          this.laravelData = res.data;
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    },
+  },
+  created() {
+    this.getResults();
+  },
+```
+
+
 #### Custom Validation:
 ``` Laravel ```
 ```php
