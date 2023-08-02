@@ -30,21 +30,24 @@
 -   [Package](#Package)
 
 # Laravel
-In this section you will find, laravel related information regarding the CSFD ***(Customize System for Faster Development)***
+
+In this section you will find, laravel related information regarding the CSFD **_(Customize System for Faster Development)_**
 
 #### Database
+
 Database section contain various information regarding the database manupulation,ORM and much more.
 
 #### Order
 
-* Order by a specific column
+-   Order by a specific column
+
 ```
  $query->orderByRaw("FIELD(status, 'Pending', 'Success')")
 ```
 
 #### Date
 
-* From date / To date Contain a single date:
+-   From date / To date Contain a single date:
 
 ```
 // controller:
@@ -79,7 +82,7 @@ $query->whereBetween('notice_date', [$startDate, $endDate]);
 </div>
 ```
 
-* From date / To date which contain two date:
+-   From date / To date which contain two date:
 
 ```
 // controller:
@@ -91,27 +94,28 @@ $query->whereBetween('notice_date', [$startDate, $endDate]);
 
 # Relationship
 
-* Belongs to:
+-   Belongs to:
 
 ```
 return $this->belongsTo(Foo::class, 'foreign_key', 'owner_key');
 return $this->belongsTo(Album::class, "album_id","id");
 ```
 
-* Has One:
+-   Has One:
 
 ```
 return $this->hasOne(Foo::class, 'foreign_key', 'local_key');
 return $this->hasOne(Slider::class, 'slider_id', 'id');
 ```
-* Has Many:
+
+-   Has Many:
 
 ```
  return $this->hasMany(Foo::class, 'foreign_key', 'local_key');
  return $this->hasMany(Foo::class, 'slider_id', 'id');
 ```
 
-* Search on Relationship:
+-   Search on Relationship:
 
 ```
 $query = Video::with('model')->whereHas('album', function ($query) use ($request) {
@@ -122,7 +126,7 @@ $query = Video::with('model')->whereHas('album', function ($query) use ($request
 
 #### Upoading
 
-* Image Upload:
+-   Image Upload:
 
 ```
 if (!empty($thumbnail)) {
@@ -139,9 +143,11 @@ if (!empty($thumbnail)) {
 ```
 
 # Vue
-This section contains resources related ```vue.js```.
+
+This section contains resources related `vue.js`.
 
 #### Add a extra button in "Base-Table"
+
 In your index page , inside created() put this code and modify it.
 
 ```
@@ -156,11 +162,11 @@ this.table.routes.array = [
     ];
 ```
 
-
-
 #### Custom Laravel PaginationIn Vue
-``` Ref: Genform [global/genform] ```
-``` Vue template ```
+
+`Ref: Genform [global/genform]`
+`Vue template`
+
 ```js
 <template v-for="(item, index) in laravelData.data" :key="index">
 </template>
@@ -170,7 +176,9 @@ this.table.routes.array = [
     @pagination-change-page="getResults"
 ></laravel-pagination>
 ```
-``` Script ```
+
+`Script`
+
 ```js
  data() {
     return {
@@ -213,9 +221,10 @@ this.table.routes.array = [
   },
 ```
 
-
 #### Custom Validation:
-``` Laravel ```
+
+`Laravel`
+
 ```php
 $v = validator($request->all(), [
     'avatar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
@@ -225,14 +234,14 @@ $v = validator($request->all(), [
 if ($v->fails()) return response()->json(['errors' => $v->errors()], 422);
 ```
 
-``` Vue ```
+`Vue`
 
 ```js
 this.store("employee/upload/profile", formData);
 ```
 
-
 #### Custom Add / Back button
+
 Inside the, template "create-form" , insert it [Your vue file] , and you can modify it via route.
 
 ```
@@ -257,7 +266,7 @@ Inside the, template "create-form" , insert it [Your vue file] , and you can mod
 
 #### Use Crop in Image
 
-* In vue template:
+-   In vue template:
 
 ```
 <!------------ Single Input ------------>
@@ -282,7 +291,7 @@ Inside the, template "create-form" , insert it [Your vue file] , and you can mod
 ></GlobalCrop>
 ```
 
-* In vue data():
+-   In vue data():
 
 ```
 data(){
@@ -295,7 +304,7 @@ data(){
 }
 ```
 
-* In vue provide:
+-   In vue provide:
 
 ```
  provide() {
@@ -307,7 +316,7 @@ data(){
 
 ```
 
-* In vue store():
+-   In vue store():
 
 As we are using the cropper , we have to sent it through the 'this.data' property.
 
@@ -315,15 +324,15 @@ As we are using the cropper , we have to sent it through the 'this.data' propert
 this.store(this.model,this.data,"route"); // Here, you can put your own route.
 ```
 
-* In controller store()
+-   In controller store()
 
 ```
 $image = $request->image;
 $this->upload($image, $path, null, $base64 = true);
 ```
 
-* In controller update()
-As from frontend you will recive the image as text not a file , that's why you have to check , if the image is text and same as in Database, then it is an old image.
+-   In controller update()
+    As from frontend you will recive the image as text not a file , that's why you have to check , if the image is text and same as in Database, then it is an old image.
 
 ```
 if ($model->image !== $request->image) {
@@ -334,19 +343,23 @@ if ($model->image !== $request->image) {
 ```
 
 #### Resize in Blade
+
 You can resize image in blade, this resizer will helps you to resize the images, also we have
 Image Intervention package. After cropping the image, it becomes base64, you should store it as
 file in disk. Then resize it later in blade. We have tested the performance , and can assure you
 it works.
 
-``` package:  "bkwld/croppa": "^6.0" ```
+`package:  "bkwld/croppa": "^6.0"`
+
 ```html
-<img src="{{ Croppa::url($news->image, 600, 200, ['resize', 'quality' => 100]) }}" />
+<img
+    src="{{ Croppa::url($news->image, 600, 200, ['resize', 'quality' => 100]) }}"
+/>
 ```
 
 #### Multiple Select with Dropdown and Search
 
-ref : ```@/profile/create.vue```
+ref : `@/profile/create.vue`
 
 ```
 <MultipleSelectContainer
@@ -391,7 +404,8 @@ methods:{
 
 ### Custom Select for Manual Dropdown:
 
-* ```Example 01: ```
+-   `Example 01: `
+
 #### In Template
 
 ```
@@ -419,7 +433,8 @@ data(){
 }
 ```
 
-* ```Example 02: ```
+-   `Example 02: `
+
 ```
 <v-select-container
         field="data.module_name"
@@ -462,6 +477,7 @@ data(){
 ```
 
 # Remove a specific button of base table:
+
 create a variable and define the routes , then inject it in the data property inside table.
 
 ```
@@ -500,10 +516,11 @@ in view.vue
   in controller show:
   return Committee::with('session','category')->where('id',$id)->first();
 ```
+
 #### View Base Table:
 
+Hints: **_`View => ViewPage => ViewBaseTable`_**
 
-Hints: ***```View => ViewPage => ViewBaseTable```***
 ```
  data() {
     return {
@@ -521,9 +538,11 @@ Hints: ***```View => ViewPage => ViewBaseTable```***
 ```
 
 #### Filters:
+
 Daily resuable function to manupulate your string.
 
 #### enFormat()
+
 You can use this global function to format the date as 11 May 2023 for consistency over the project.
 
 ```
@@ -531,6 +550,7 @@ $filter.enFormat(history.login_at) // created_at or updated_at
 ```
 
 #### capitalize()
+
 You can capitalize you word.
 
 ```
@@ -538,17 +558,21 @@ $filter.capitalize("sunday");
 ```
 
 ### Networking in Vue js:
+
 This section contains the example of using https.
 
-* Get all Data
+-   Get all Data
+
 ```
 axios.get('service?page=1&allData=true').then((res)=>console.log(res.data));
 ```
 
 ### Global Function
+
 CSFD contains various global function to interact with https.
 
 #### get_data()
+
 First parameter is for url, you can pass whatever you like. then second parameter is for data object,
 where you want to put the data after fetching it in your component.
 
@@ -557,6 +581,7 @@ get_data("url","data property");
 ```
 
 #### callApi()
+
 Call API is responsible for calling the API endpoint with data object. First parameter , is method "GET/POST/PUT/ANY" then your "url" , then the "dataObj"
 
 ```
@@ -564,8 +589,10 @@ callApi(method, url, dataObj = null)
 ```
 
 #### get_sorting()
+
 To get the sorting of any model , you can use this function.
 Namespace :
+
 ```
 get_sorting(namespace)
 
@@ -574,6 +601,7 @@ Example 02: App\Models\Website\Content will be like get_sorting("Website-Content
 ```
 
 #### destroy_data()
+
 This one is responsible for deleting a resource from the database.
 
 ```
@@ -581,6 +609,7 @@ destroy_data(model_name, id, search_data=null)
 ```
 
 # Utility function:
+
 Utility function contains various utility functions.
 
 #### scrollTop()
@@ -656,14 +685,9 @@ watch: {
 #### A custom validation
 
 ```vue
-"data.button_type": function (value = null) {
-      const vm = this;
-      return Validator.value(value).custom(function (value) {
-        if (vm.data.has_button === "Yes") {
-          vm.$toast("Button type is required", "warning");
-        }
-      });
-    },
+"data.button_type": function (value = null) { const vm = this; return
+Validator.value(value).custom(function (value) { if (vm.data.has_button ===
+"Yes") { vm.$toast("Button type is required", "warning"); } }); },
 ```
 
 ```
@@ -700,7 +724,7 @@ watch: {
 
 #### Multiple search input in CSFD Vue
 
-ref: ``` admin/index.vue ```
+ref: `admin/index.vue`
 
 ```
 // In vue template:
@@ -733,14 +757,18 @@ ref: ``` admin/index.vue ```
 ```
 
 #### Advance Vue search:
-ref:  `activity/index.vue`
+
+ref: `activity/index.vue`
 
 ## Modal Components
-For ref: ``` @/profile/create.vue ```
+
+For ref: `@/profile/create.vue`
 
 #### Basic Modal
+
 You can use the basic modal for basic operation of your application. Also, By creating a seperate component,
 your model can be extendable further.
+
 ```
 <div class="col-md-3">
     <button @click="openModal">Open Modal</button>
@@ -767,6 +795,7 @@ your model can be extendable further.
     </template>
 </Modal>
 ```
+
 ```
  methods:{
     openModal() {
@@ -782,6 +811,7 @@ your model can be extendable further.
 ```
 
 #### Inherit Modal
+
 This modal is aims to inherit the "create.vue" file in it's body. Sometimes you need to add some data,
 but navigating to different page and add it, which requires extra work.
 To, avoid this, you add any data to any module form a single module.
@@ -805,7 +835,6 @@ To, avoid this, you add any data to any module form a single module.
     </InheritModal>
     <!-------------- Inherit Modal --------------->
 ```
-
 
 #### Tooling
 
@@ -869,15 +898,14 @@ To, avoid this, you add any data to any module form a single module.
 
 #### Package:
 
-``` Vue ```
-| Package      | README                                          |
+`Vue`
+| Package | README |
 | ------------ | ----------------------------------------------- |
-| Validator    | [https://simple-vue-validator.netlify.app/]     |
+| Validator | [https://simple-vue-validator.netlify.app/] |
 
-
-``` Laravel ```
-| Package      | README                                          |
+`Laravel`
+| Package | README |
 | ------------ | ----------------------------------------------- |
-| Error        | [https://github.com/Nogor-Solutions-Ltd/Error]  |
+| Error | [https://github.com/Nogor-Solutions-Ltd/Error] |
 | Activity Log | [https://github.com/spatie/laravel-activitylog] |
-| Croppa       | [https://github.com/BKWLD/croppa]               |
+| Croppa | [https://github.com/BKWLD/croppa] |
