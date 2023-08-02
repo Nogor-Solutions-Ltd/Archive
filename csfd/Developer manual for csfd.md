@@ -240,6 +240,46 @@ if ($v->fails()) return response()->json(['errors' => $v->errors()], 422);
 this.store("employee/upload/profile", formData);
 ```
 
+#### Image Dimension Validation
+``` Image File Component ```
+```vue
+ <File ref="childRef" title='Logo (W:149px,H:200px)' field='data.logo' mime='img' req="true" fileClassName='data.logo' />
+```
+
+```
+Image validation
+```
+```js
+.custom(function(){
+if (!Validator.isEmpty(value)) {
+const img = new Image();
+img.onload = function() {
+    const width = img.width;
+    const height = img.height;
+    const expectedWidth = 149;
+    const expectedHeight = 200;
+
+    if (width >= expectedWidth && height >= expectedHeight) {
+      return "Image dimensions are valid."
+    } else {
+        vm.$toast(`Image dimensions should be width:${expectedWidth}px, height:${expectedHeight}px.`,'error')
+        vm.data.logo = "";
+        vm.image="";
+        vm.$refs.childRef.removeImage();
+      }
+};
+
+const reader = new FileReader();
+reader.onloadend = function() {
+    img.src = reader.result;
+};
+
+reader.readAsDataURL(value);
+}
+});
+```
+
+
 #### Custom Add / Back button
 
 Inside the, template "create-form" , insert it [Your vue file] , and you can modify it via route.
