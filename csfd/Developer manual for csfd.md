@@ -39,23 +39,23 @@ Database section contain various information regarding the database manupulation
 
 #### Order
 
--   Order by a specific column
+-   Order by a specific columns
 
-```
- $query->orderByRaw("FIELD(status, 'Pending', 'Success')")
+```php
+$query->orderByRaw("FIELD(status, 'Pending', 'Success')")
 ```
 
 #### Date
 
 -   From date / To date Contain a single date:
 
-```
+```php
 // controller:
 $startDate = $request->from_date ?? '1900-01-01';
 $endDate = $request->to_date ?? now()->toDateString();
 $query->whereBetween('notice_date', [$startDate, $endDate]);
-
-// vue:
+```
+```vue
 <div class="col-2">
     <div class="form-element">
         <input
@@ -84,7 +84,7 @@ $query->whereBetween('notice_date', [$startDate, $endDate]);
 
 -   From date / To date which contain two date:
 
-```
+```php
 // controller:
  $startDate = $request->from_date ?? '1900-01-01';
         $endDate = $request->to_date ?? now()->toDateString();
@@ -96,28 +96,28 @@ $query->whereBetween('notice_date', [$startDate, $endDate]);
 
 -   Belongs to:
 
-```
+```php
 return $this->belongsTo(Foo::class, 'foreign_key', 'owner_key');
 return $this->belongsTo(Album::class, "album_id","id");
 ```
 
 -   Has One:
 
-```
+```php
 return $this->hasOne(Foo::class, 'foreign_key', 'local_key');
 return $this->hasOne(Slider::class, 'slider_id', 'id');
 ```
 
 -   Has Many:
 
-```
+```php
  return $this->hasMany(Foo::class, 'foreign_key', 'local_key');
  return $this->hasMany(Foo::class, 'slider_id', 'id');
 ```
 
 -   Search on Relationship:
 
-```
+```php
 $query = Video::with('model')->whereHas('album', function ($query) use ($request) {
     $query->whereLike('name',$request->value );
 })->oldest('sorting');
@@ -128,13 +128,13 @@ $query = Video::with('model')->whereHas('album', function ($query) use ($request
 
 -   Image Upload:
 
-```
+```php
 if (!empty($thumbnail)) {
     $data['thumbnail'] = $this->upload($thumbnail, 'video', null, $base64 = false);
 }
 ```
 
-```
+```php
 if (!empty($thumbnail)) {
     $data['thumbnail'] = $this->upload($thumbnail, 'video', null, $base64 = true);
 } else {
@@ -150,16 +150,16 @@ This section contains resources related `vue.js`.
 
 In your index page , inside created() put this code and modify it.
 
-```
+```js
 this.table.routes.array = [
-      {
-        title:"your tile",
-        route: "your.route.index",
-        icon: "home", // fa fa-[icon]
-        class: "text-danger",
-        isQuery: true, // create?id="id"
-      },
-    ];
+  {
+    title:"your tile",
+    route: "your.route.index",
+    icon: "home", // fa fa-[icon]
+    class: "text-danger",
+    isQuery: true, // create?id="id"
+  },
+];
 ```
 
 #### Custom Laravel PaginationIn Vue
@@ -284,31 +284,31 @@ reader.readAsDataURL(value);
 
 Inside the, template "create-form" , insert it [Your vue file] , and you can modify it via route.
 
-```
-  <create-form @onSubmit="submit">
-<template v-slot:button>
-      <AddOrBackButton
-        :route="'slider' + '.index'"
-        :portion="slider"
-        :icon="'fas fa-backward'"
-      />
+```js
+<create-form @onSubmit="submit">
+    <template v-slot:button>
+    <AddOrBackButton
+    :route="'slider' + '.index'"
+    :portion="slider"
+    :icon="'fas fa-backward'"
+    />
     </template>
-  <create-form @onSubmit="submit">
+<create-form @onSubmit="submit">
 
-  <slot name="button">
-              <AddOrBackButton
-                :route="model + '.index'"
-                :portion="model"
-                :icon="'fas fa-backward'"
-              />
-            </slot>
+<slot name="button">
+  <AddOrBackButton
+    :route="model + '.index'"
+    :portion="model"
+    :icon="'fas fa-backward'"
+  />
+</slot>
 ```
 
 #### Use Crop in Image
 
 -   In vue template:
 
-```
+```js
 <!------------ Single Input ------------>
     <div class="row align-items-center">
   <File
@@ -333,7 +333,7 @@ Inside the, template "create-form" , insert it [Your vue file] , and you can mod
 
 -   In vue data():
 
-```
+```js
 data(){
     return{
         data:{
@@ -346,7 +346,7 @@ data(){
 
 -   In vue provide:
 
-```
+```js
  provide() {
     return {
        data: () => this.data,
@@ -366,7 +366,7 @@ this.store(this.model,this.data,"route"); // Here, you can put your own route.
 
 -   In controller store()
 
-```
+```php
 $image = $request->image;
 $this->upload($image, $path, null, $base64 = true);
 ```
@@ -401,7 +401,7 @@ it works.
 
 ref : `@/profile/create.vue`
 
-```
+```js
 <MultipleSelectContainer
         field="data.categories"
         :req="true"
@@ -448,7 +448,7 @@ methods:{
 
 #### In Template
 
-```
+```js
 <!------------ Single Input ------------>
 <v-select-container title="Button type">
 <select
@@ -506,7 +506,7 @@ data(){
 
 #### In data()
 
-```
+```js
 data(){
     return{
         data:{
@@ -537,8 +537,8 @@ const routes = {
 
 #### Show relational Data in "View base table":
 
-```
-in view.vue
+```js
+// In view.vue
  data() {
     return {
       model: model,
@@ -585,7 +585,7 @@ Daily resuable function to manupulate your string.
 
 You can use this global function to format the date as 11 May 2023 for consistency over the project.
 
-```
+```js
 $filter.enFormat(history.login_at) // created_at or updated_at
 ```
 
@@ -593,7 +593,7 @@ $filter.enFormat(history.login_at) // created_at or updated_at
 
 You can capitalize you word.
 
-```
+```js
 $filter.capitalize("sunday");
 ```
 
@@ -603,7 +603,7 @@ This section contains the example of using https.
 
 -   Get all Data
 
-```
+```js
 axios.get('service?page=1&allData=true').then((res)=>console.log(res.data));
 ```
 
@@ -616,7 +616,7 @@ CSFD contains various global function to interact with https.
 First parameter is for url, you can pass whatever you like. then second parameter is for data object,
 where you want to put the data after fetching it in your component.
 
-```
+```js
 get_data("url","data property");
 ```
 
@@ -624,7 +624,7 @@ get_data("url","data property");
 
 Call API is responsible for calling the API endpoint with data object. First parameter , is method "GET/POST/PUT/ANY" then your "url" , then the "dataObj"
 
-```
+```js
 callApi(method, url, dataObj = null)
 ```
 
@@ -633,7 +633,7 @@ callApi(method, url, dataObj = null)
 To get the sorting of any model , you can use this function.
 Namespace :
 
-```
+```js
 get_sorting(namespace)
 
 Example 01 : App\Models\Content will be like get_sorting("Content")",
@@ -644,7 +644,7 @@ Example 02: App\Models\Website\Content will be like get_sorting("Website-Content
 
 This one is responsible for deleting a resource from the database.
 
-```
+```js
 destroy_data(model_name, id, search_data=null)
 ```
 
@@ -656,7 +656,7 @@ Utility function contains various utility functions.
 
 To modify the scroll behaviour.
 
-```
+```js
  this.scrollTop(0, 0);
 ```
 
@@ -664,21 +664,21 @@ To modify the scroll behaviour.
 
 Print the html content as pdf.
 
-```
- this.print(elementId, documentTitle)
- or
- <button @click="print(elementId, documentTitle)"></button>
+```js
+this.print(elementId, documentTitle)
+or
+<button @click="print(elementId, documentTitle)"></button>
 ```
 
 #### Disable Index page base table Button:
 
-```
+```js
  <index-page :button="false">...</index-page>
 ```
 
 #### Disable Base table action button:
 
-```
+```js
 methods:{
     injectCustomRoute() {
      this.table.routes.edit = null;
