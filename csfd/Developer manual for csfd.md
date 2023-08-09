@@ -221,6 +221,15 @@ this.table.routes.array = [
   },
 ```
 
+#### Add all field in form data
+```js
+var form = document.getElementById("form");
+var formData = new FormData(form);
+for (var key in this.data) {
+    formData.append(key, this.data[key]);
+}
+```
+
 #### Custom Validation:
 
 `Laravel`
