@@ -944,6 +944,8 @@ To, avoid this, you add any data to any module form a single module.
 
 -   Laravel
 -   Vue
+-   Performance [https://developer.chrome.com/docs/devtools/performance/]
+-   Fast Load [https://web.dev/fast/]
 
 #### Package:
 
