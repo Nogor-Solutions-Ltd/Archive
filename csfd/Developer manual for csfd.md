@@ -33,6 +33,15 @@
 
 In this section you will find, laravel related information regarding the CSFD **_(Customize System for Faster Development)_**
 
+#### Cloudflare
+```
+// If base64...
+$data['profile'] = cloudflare($profile, 'admin', '200x200,400x400', base64: true);
+
+// If upload instance...
+$localPaths = cloudflare(file:$image, folder:'radal', resizeSize:'200x200,400x400', base64: false);
+```
+
 #### Database
 
 Database section contain various information regarding the database manupulation,ORM and much more.
