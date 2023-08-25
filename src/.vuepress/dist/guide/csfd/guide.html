@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Manual for CSFD (Customize System for Faster Development) | ByteLogs</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="It&amp;#39;s a mirror of ByteLogs repo">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.1a8e0fbc.css" as="style"><link rel="preload" href="/assets/js/app.9d1dbcdb.js" as="script"><link rel="preload" href="/assets/js/2.733019b2.js" as="script"><link rel="preload" href="/assets/js/12.671aa5bb.js" as="script"><link rel="prefetch" href="/assets/js/10.23033a15.js"><link rel="prefetch" href="/assets/js/11.a72169dd.js"><link rel="prefetch" href="/assets/js/13.8dbd6227.js"><link rel="prefetch" href="/assets/js/14.6bbd441b.js"><link rel="prefetch" href="/assets/js/3.29ddc053.js"><link rel="prefetch" href="/assets/js/4.da3ef268.js"><link rel="prefetch" href="/assets/js/5.dac787d8.js"><link rel="prefetch" href="/assets/js/6.2d0a63f8.js"><link rel="prefetch" href="/assets/js/7.307492ca.js"><link rel="prefetch" href="/assets/js/8.72f0d850.js"><link rel="prefetch" href="/assets/js/9.3c5a8fdb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1a8e0fbc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">ByteLogs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/csfd.html" class="nav-link">
+  CSFD
+</a></div><div class="nav-item"><a href="/config/" class="nav-link">
+  Config
+</a></div><div class="nav-item"><a href="https://github.com/Muhammad-Sarfaraz/ByteLogs/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/csfd.html" class="nav-link">
+  CSFD
+</a></div><div class="nav-item"><a href="/config/" class="nav-link">
+  Config
+</a></div><div class="nav-item"><a href="https://github.com/Muhammad-Sarfaraz/ByteLogs/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Guide</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/" aria-current="page" class="sidebar-link">Hello</a></li><li><a href="/guide/turbo/guide.html" class="sidebar-link">Turbo Js</a></li><li><a href="/guide/csfd/guide.html" aria-current="page" class="active sidebar-link">Manual for CSFD (Customize System for Faster Development)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/csfd/guide.html#table-of-contents" class="sidebar-link">Table of Contents</a></li><li class="sidebar-sub-header"><a href="/guide/csfd/guide.html#vue-js" class="sidebar-link">Vue.js</a></li><li class="sidebar-sub-header"><a href="/guide/csfd/guide.html#modal-components" class="sidebar-link">Modal Components</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="manual-for-csfd-customize-system-for-faster-development"><a href="#manual-for-csfd-customize-system-for-faster-development" class="header-anchor">#</a> Manual for CSFD (Customize System for Faster Development)</h1> <h2 id="table-of-contents"><a href="#table-of-contents" class="header-anchor">#</a> Table of Contents</h2> <ul><li><a href="#laravel">Laravel</a> <ul><li>Eloquent</li> <li>Query Builder</li> <li>Pagination</li> <li>Model</li> <li>Relationship</li> <li>Hooks</li></ul></li> <li><a href="#vue">Vue</a> <ul><li>Network</li> <li>Slot</li> <li>Props</li> <li>Base table</li> <li>View base table</li> <li>Search Block</li> <li>Watch</li> <li>Validation</li></ul></li> <li><a href="#tooling">Tooling</a> <ul><li>Pint</li></ul></li> <li><a href="#style">Style</a> <ul><li>Laravel</li> <li>Vue</li> <li>MySQL</li></ul></li> <li><a href="#ref">Ref</a> <ul><li>Vue</li> <li>Laravel</li></ul></li> <li><a href="#Package">Package</a></li></ul> <h1 id="laravel"><a href="#laravel" class="header-anchor">#</a> Laravel</h1> <p>In this section you will find, laravel related information regarding the CSFD <strong><em>(Customize System for Faster Development)</em></strong></p> <h4 id="database"><a href="#database" class="header-anchor">#</a> Database</h4> <p>Database section contain various information regarding the database manupulation,ORM and much more.</p> <h4 id="order"><a href="#order" class="header-anchor">#</a> Order</h4> <ul><li>Order by a specific columns</li></ul> <div class="language-php extra-class"><pre class="language-php"><code><span class="token variable">$query</span><span class="token operator">-&gt;</span><span class="token function">orderByRaw</span><span class="token punctuation">(</span><span class="token string double-quoted-string">&quot;FIELD(status, 'Pending', 'Success')&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="date"><a href="#date" class="header-anchor">#</a> Date</h4> <ul><li>From date / To date Contain a single date:</li></ul> <div class="language-php extra-class"><pre class="language-php"><code><span class="token comment">// controller:</span>
+<span class="token variable">$startDate</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-&gt;</span><span class="token property">from_date</span> <span class="token operator">??</span> <span class="token string single-quoted-string">'1900-01-01'</span><span class="token punctuation">;</span>
+<span class="token variable">$endDate</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-&gt;</span><span class="token property">to_date</span> <span class="token operator">??</span> <span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">toDateString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$query</span><span class="token operator">-&gt;</span><span class="token function">whereBetween</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'notice_date'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token variable">$startDate</span><span class="token punctuation">,</span> <span class="token variable">$endDate</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>col-2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>form-element<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+        <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>From date<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>search_data.from_date<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>form-control form-control-sm shadow-none<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span>
+        <span class="token special-attr"><span class="token attr-name">onfocus</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value javascript language-javascript"><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token operator">=</span><span class="token string">'date'</span><span class="token punctuation">)</span></span><span class="token punctuation">&quot;</span></span></span>
+        <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>date<span class="token punctuation">&quot;</span></span>
+        <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>col-2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>form-element<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+        <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>To Date<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>search_data.to_date<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>form-control form-control-sm shadow-none<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span>
+        <span class="token special-attr"><span class="token attr-name">onfocus</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value javascript language-javascript"><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token operator">=</span><span class="token string">'date'</span><span class="token punctuation">)</span></span><span class="token punctuation">&quot;</span></span></span>
+        <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>date<span class="token punctuation">&quot;</span></span>
+        <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>From date / To date which contain two date:</li></ul> <div class="language-php extra-class"><pre class="language-php"><code><span class="token comment">// controller:</span>
+ <span class="token variable">$startDate</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-&gt;</span><span class="token property">from_date</span> <span class="token operator">??</span> <span class="token string single-quoted-string">'1900-01-01'</span><span class="token punctuation">;</span>
+        <span class="token variable">$endDate</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-&gt;</span><span class="token property">to_date</span> <span class="token operator">??</span> <span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">toDateString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$query</span><span class="token operator">-&gt;</span><span class="token function">whereDate</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'start_date'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'&gt;='</span><span class="token punctuation">,</span> <span class="token variable">$startDate</span><span class="token punctuation">)</span>
+            <span class="token operator">-&gt;</span><span class="token function">whereDate</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'end_date'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'&lt;='</span><span class="token punctuation">,</span> <span class="token variable">$endDate</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h1 id="relationship"><a href="#relationship" class="header-anchor">#</a> Relationship</h1> <ul><li>Belongs to:</li></ul> <div class="language-php extra-class"><pre class="language-php"><code><span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">belongsTo</span><span class="token punctuation">(</span><span class="token class-name static-context">Foo</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'foreign_key'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'owner_key'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">belongsTo</span><span class="token punctuation">(</span><span class="token class-name static-context">Album</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">&quot;album_id&quot;</span><span class="token punctuation">,</span><span class="token string double-quoted-string">&quot;id&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>Has One:</li></ul> <div class="language-php extra-class"><pre class="language-php"><code><span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">hasOne</span><span class="token punctuation">(</span><span class="token class-name static-context">Foo</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'foreign_key'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'local_key'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">hasOne</span><span class="token punctuation">(</span><span class="token class-name static-context">Slider</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'slider_id'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>Has Many:</li></ul> <div class="language-php extra-class"><pre class="language-php"><code> <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">hasMany</span><span class="token punctuation">(</span><span class="token class-name static-context">Foo</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'foreign_key'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'local_key'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">return</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">hasMany</span><span class="token punctuation">(</span><span class="token class-name static-context">Foo</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'slider_id'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>Search on Relationship:</li></ul> <div class="language-php extra-class"><pre class="language-php"><code><span class="token variable">$query</span> <span class="token operator">=</span> <span class="token class-name static-context">Video</span><span class="token operator">::</span><span class="token function">with</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'model'</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">whereHas</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'album'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$query</span><span class="token punctuation">)</span> <span class="token keyword">use</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$query</span><span class="token operator">-&gt;</span><span class="token function">whereLike</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'name'</span><span class="token punctuation">,</span><span class="token variable">$request</span><span class="token operator">-&gt;</span><span class="token property">value</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">oldest</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'sorting'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><h4 id="upoading"><a href="#upoading" class="header-anchor">#</a> Upoading</h4> <ul><li>Image Upload:</li></ul> <div class="language-php extra-class"><pre class="language-php"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$thumbnail</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$data</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'thumbnail'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">upload</span><span class="token punctuation">(</span><span class="token variable">$thumbnail</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'video'</span><span class="token punctuation">,</span> <span class="token constant">null</span><span class="token punctuation">,</span> <span class="token variable">$base64</span> <span class="token operator">=</span> <span class="token constant boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-php extra-class"><pre class="language-php"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$thumbnail</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$data</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'thumbnail'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">upload</span><span class="token punctuation">(</span><span class="token variable">$thumbnail</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'video'</span><span class="token punctuation">,</span> <span class="token constant">null</span><span class="token punctuation">,</span> <span class="token variable">$base64</span> <span class="token operator">=</span> <span class="token constant boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token variable">$data</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'thumbnail'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">oldFile</span><span class="token punctuation">(</span><span class="token variable">$video</span><span class="token operator">-&gt;</span><span class="token property">thumbnail</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h1 id="vue"><a href="#vue" class="header-anchor">#</a> Vue</h1> <p>This section contains resources related <code>vue.js</code>.</p> <h4 id="add-a-extra-button-in-base-table"><a href="#add-a-extra-button-in-base-table" class="header-anchor">#</a> Add a extra button in &quot;Base-Table&quot;</h4> <p>In your index page , inside created() put this code and modify it.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span>table<span class="token punctuation">.</span>routes<span class="token punctuation">.</span>array <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span><span class="token string">&quot;your tile&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">route</span><span class="token operator">:</span> <span class="token string">&quot;your.route.index&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">icon</span><span class="token operator">:</span> <span class="token string">&quot;home&quot;</span><span class="token punctuation">,</span> <span class="token comment">// fa fa-[icon]</span>
+    <span class="token keyword">class</span><span class="token operator">:</span> <span class="token string">&quot;text-danger&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">isQuery</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// create?id=&quot;id&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="custom-laravel-paginationin-vue"><a href="#custom-laravel-paginationin-vue" class="header-anchor">#</a> Custom Laravel PaginationIn Vue</h4> <p><code>Ref: Genform [global/genform]</code> <code>Vue template</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>template v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;(item, index) in laravelData.data&quot;</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">&quot;index&quot;</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>laravel<span class="token operator">-</span>pagination
+    <span class="token operator">:</span>data<span class="token operator">=</span><span class="token string">&quot;laravelData&quot;</span>
+    @pagination<span class="token operator">-</span>change<span class="token operator">-</span>page<span class="token operator">=</span><span class="token string">&quot;getResults&quot;</span>
+<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>laravel<span class="token operator">-</span>pagination<span class="token operator">&gt;</span>
+</code></pre></div><p><code>Script</code></p> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">laravelData</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">getRecords</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      axios
+        <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;get/employee-records&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">getResults</span><span class="token punctuation">(</span><span class="token parameter">page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> page <span class="token operator">===</span> <span class="token string">&quot;undefined&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        page <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      axios
+        <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/get/employee-records&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">page</span><span class="token operator">:</span> page<span class="token punctuation">,</span>
+            <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>laravelData <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">&quot;Error fetching data:&quot;</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getResults</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><h4 id="add-all-field-in-form-data"><a href="#add-all-field-in-form-data" class="header-anchor">#</a> Add all field in form data</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> form <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;form&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> formData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FormData</span><span class="token punctuation">(</span>form<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> key <span class="token keyword">in</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    formData<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="custom-validation"><a href="#custom-validation" class="header-anchor">#</a> Custom Validation:</h4> <p><code>Laravel</code></p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token variable">$v</span> <span class="token operator">=</span> <span class="token function">validator</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-&gt;</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+    <span class="token string single-quoted-string">'avatar'</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'required|image|mimes:jpeg,png,jpg|max:2048'</span><span class="token punctuation">,</span>
+    <span class="token string single-quoted-string">'id'</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'required|integer|exists:employees,id'</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$v</span><span class="token operator">-&gt;</span><span class="token function">fails</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">response</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'errors'</span> <span class="token operator">=&gt;</span> <span class="token variable">$v</span><span class="token operator">-&gt;</span><span class="token function">errors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">422</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p><code>Vue</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span><span class="token string">&quot;employee/upload/profile&quot;</span><span class="token punctuation">,</span> formData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="image-dimension-validation"><a href="#image-dimension-validation" class="header-anchor">#</a> Image Dimension Validation</h4> <p><code>Image File Component</code></p> <div class="language-vue extra-class"><pre class="language-vue"><code> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>File</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>childRef<span class="token punctuation">&quot;</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>Logo (W:149px,H:200px)<span class="token punctuation">'</span></span> <span class="token attr-name">field</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>data.logo<span class="token punctuation">'</span></span> <span class="token attr-name">mime</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>img<span class="token punctuation">'</span></span> <span class="token attr-name">req</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>true<span class="token punctuation">&quot;</span></span> <span class="token attr-name">fileClassName</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>data.logo<span class="token punctuation">'</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Image validation
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">.</span><span class="token function">custom</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Validator<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> img <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+img<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> width <span class="token operator">=</span> img<span class="token punctuation">.</span>width<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> height <span class="token operator">=</span> img<span class="token punctuation">.</span>height<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> expectedWidth <span class="token operator">=</span> <span class="token number">149</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> expectedHeight <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>width <span class="token operator">&gt;=</span> expectedWidth <span class="token operator">&amp;&amp;</span> height <span class="token operator">&gt;=</span> expectedHeight<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token string">&quot;Image dimensions are valid.&quot;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        vm<span class="token punctuation">.</span><span class="token function">$toast</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Image dimensions should be width:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expectedWidth<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px, height:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expectedHeight<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span><span class="token string">'error'</span><span class="token punctuation">)</span>
+        vm<span class="token punctuation">.</span>data<span class="token punctuation">.</span>logo <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+        vm<span class="token punctuation">.</span>image<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+        vm<span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>childRef<span class="token punctuation">.</span><span class="token function">removeImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+reader<span class="token punctuation">.</span><span class="token function-variable function">onloadend</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    img<span class="token punctuation">.</span>src <span class="token operator">=</span> reader<span class="token punctuation">.</span>result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+reader<span class="token punctuation">.</span><span class="token function">readAsDataURL</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="custom-add-back-button"><a href="#custom-add-back-button" class="header-anchor">#</a> Custom Add / Back button</h4> <p>Inside the, template &quot;create-form&quot; , insert it [Your vue file] , and you can modify it via route.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>create<span class="token operator">-</span>form @onSubmit<span class="token operator">=</span><span class="token string">&quot;submit&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>template v<span class="token operator">-</span>slot<span class="token operator">:</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>AddOrBackButton
+    <span class="token operator">:</span>route<span class="token operator">=</span><span class="token string">&quot;'slider' + '.index'&quot;</span>
+    <span class="token operator">:</span>portion<span class="token operator">=</span><span class="token string">&quot;slider&quot;</span>
+    <span class="token operator">:</span>icon<span class="token operator">=</span><span class="token string">&quot;'fas fa-backward'&quot;</span>
+    <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>create<span class="token operator">-</span>form @onSubmit<span class="token operator">=</span><span class="token string">&quot;submit&quot;</span><span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>slot name<span class="token operator">=</span><span class="token string">&quot;button&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>AddOrBackButton
+    <span class="token operator">:</span>route<span class="token operator">=</span><span class="token string">&quot;model + '.index'&quot;</span>
+    <span class="token operator">:</span>portion<span class="token operator">=</span><span class="token string">&quot;model&quot;</span>
+    <span class="token operator">:</span>icon<span class="token operator">=</span><span class="token string">&quot;'fas fa-backward'&quot;</span>
+  <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>slot<span class="token operator">&gt;</span>
+</code></pre></div><h4 id="use-crop-in-image"><a href="#use-crop-in-image" class="header-anchor">#</a> Use Crop in Image</h4> <ul><li>In vue template:</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span> Single Input <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;row align-items-center&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>File
+    title<span class="token operator">=</span><span class="token string">&quot;Slider&quot;</span>
+    field<span class="token operator">=</span><span class="token string">&quot;data.image&quot;</span>
+    mime<span class="token operator">=</span><span class="token string">&quot;img&quot;</span>
+    fileClassName<span class="token operator">=</span><span class="token string">&quot;file2&quot;</span>
+    <span class="token operator">:</span>req<span class="token operator">=</span><span class="token string">&quot;true&quot;</span>
+    <span class="token operator">:</span>showCrop<span class="token operator">=</span><span class="token string">&quot;true&quot;</span>
+  <span class="token operator">/</span><span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span> Single Input <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">&gt;</span>
+ <span class="token operator">&lt;</span>GlobalCrop
+    field<span class="token operator">=</span><span class="token string">&quot;data.image&quot;</span>
+    v<span class="token operator">-</span>on<span class="token operator">:</span>update<span class="token operator">:</span>modelValue<span class="token operator">=</span><span class="token string">&quot;data.image = $event&quot;</span>
+    <span class="token operator">:</span>image<span class="token operator">=</span><span class="token string">&quot;image.image&quot;</span>
+    <span class="token operator">:</span>aspectRatio<span class="token operator">=</span><span class="token string">&quot;{ aspectRatio: this.slider.width / this.slider.height }&quot;</span>
+    <span class="token operator">:</span>width<span class="token operator">=</span><span class="token string">&quot;this.slider.width&quot;</span>
+    <span class="token operator">:</span>height<span class="token operator">=</span><span class="token string">&quot;this.slider.height&quot;</span>
+<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>GlobalCrop<span class="token operator">&gt;</span>
+</code></pre></div><ul><li>In vue data():</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">data</span><span class="token operator">:</span><span class="token punctuation">{</span>
+            image
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>In vue provide:</li></ul> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token function">provide</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+       <span class="token function-variable function">data</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">,</span>
+      <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>image<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+</code></pre></div><ul><li>In vue store():</li></ul> <p>As we are using the cropper , we have to sent it through the 'this.data' property.</p> <div class="language- extra-class"><pre class="language-text"><code>this.store(this.model,this.data,&quot;route&quot;); // Here, you can put your own route.
+</code></pre></div><ul><li>In controller store()</li></ul> <div class="language-php extra-class"><pre class="language-php"><code><span class="token variable">$image</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-&gt;</span><span class="token property">image</span><span class="token punctuation">;</span>
+<span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">upload</span><span class="token punctuation">(</span><span class="token variable">$image</span><span class="token punctuation">,</span> <span class="token variable">$path</span><span class="token punctuation">,</span> <span class="token constant">null</span><span class="token punctuation">,</span> <span class="token variable">$base64</span> <span class="token operator">=</span> <span class="token constant boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>In controller update()
+As from frontend you will recive the image as text not a file , that's why you have to check , if the image is text and same as in Database, then it is an old image.</li></ul> <div class="language- extra-class"><pre class="language-text"><code>if ($model-&gt;image !== $request-&gt;image) {
+    $data['image'] = $this-&gt;upload($model-&gt;image, 'foo', $foo-&gt;image, $base64 = true);
+} else {
+    $data['image'] = $this-&gt;oldFile($model-&gt;image);
+}
+</code></pre></div><h4 id="resize-in-blade"><a href="#resize-in-blade" class="header-anchor">#</a> Resize in Blade</h4> <p>You can resize image in blade, this resizer will helps you to resize the images, also we have
+Image Intervention package. After cropping the image, it becomes base64, you should store it as
+file in disk. Then resize it later in blade. We have tested the performance , and can assure you
+it works.</p> <p><code>package: &quot;bkwld/croppa&quot;: &quot;^6.0&quot;</code></p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>
+    <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{{ Croppa::url($news-&gt;image, 600, 200, ['resize', 'quality' =&gt; 100]) }}<span class="token punctuation">&quot;</span></span>
+<span class="token punctuation">/&gt;</span></span>
+</code></pre></div><h4 id="multiple-select-with-dropdown-and-search"><a href="#multiple-select-with-dropdown-and-search" class="header-anchor">#</a> Multiple Select with Dropdown and Search</h4> <p>ref : <code>@/profile/create.vue</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>MultipleSelectContainer
+        field<span class="token operator">=</span><span class="token string">&quot;data.categories&quot;</span>
+        <span class="token operator">:</span>req<span class="token operator">=</span><span class="token string">&quot;true&quot;</span>
+        title<span class="token operator">=</span><span class="token string">&quot;Categories&quot;</span>
+      <span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>MultipleSelect
+        style<span class="token operator">=</span><span class="token string">&quot;color: brown&quot;</span>
+        v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">&quot;data.categories&quot;</span>
+        <span class="token operator">:</span>options<span class="token operator">=</span><span class="token string">&quot;categories&quot;</span>
+        <span class="token operator">:</span>settings<span class="token operator">=</span>&quot;<span class="token punctuation">{</span>
+        <span class="token literal-property property">settingOption</span><span class="token operator">:</span> name<span class="token punctuation">,</span>
+        <span class="token literal-property property">settingOption</span><span class="token operator">:</span> value<span class="token punctuation">,</span>
+        <span class="token literal-property property">multiple</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>&quot;
+        @change<span class="token operator">=</span><span class="token string">&quot;&quot;</span>
+        @select<span class="token operator">=</span><span class="token string">&quot;&quot;</span>
+    <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>MultipleSelectContainer<span class="token operator">&gt;</span>
+
+<span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">categories</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token literal-property property">methods</span><span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function">getCategory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">category?page=1&amp;allData=true</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> n <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">text</span><span class="token operator">:</span> e<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
+            <span class="token literal-property property">id</span><span class="token operator">:</span> e<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> categories <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>categories <span class="token operator">=</span> categories<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="custom-select-for-manual-dropdown"><a href="#custom-select-for-manual-dropdown" class="header-anchor">#</a> Custom Select for Manual Dropdown:</h3> <ul><li><code>Example 01:</code></li></ul> <h4 id="in-template"><a href="#in-template" class="header-anchor">#</a> In Template</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span> Single Input <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>v<span class="token operator">-</span>select<span class="token operator">-</span>container title<span class="token operator">=</span><span class="token string">&quot;Button type&quot;</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>select
+    v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">&quot;data.types&quot;</span>
+    <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;form-select shadow-none&quot;</span>
+    aria<span class="token operator">-</span>label<span class="token operator">=</span><span class="token string">&quot;Default select example&quot;</span>
+    required
+<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>template v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;(type, index) in types&quot;</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">&quot;index&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>option value<span class="token operator">=</span><span class="token string">&quot;&quot;</span> v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">&quot;index === 0&quot;</span><span class="token operator">&gt;</span><span class="token operator">--</span> Select <span class="token operator">--</span><span class="token operator">&lt;</span><span class="token operator">/</span>option<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>option <span class="token operator">:</span>value<span class="token operator">=</span><span class="token string">&quot;type&quot;</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span><span class="token punctuation">{</span> type <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>option<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>v<span class="token operator">-</span>select<span class="token operator">-</span>container<span class="token operator">&gt;</span>
+
+<span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">types</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;Staff&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Contractor&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Supplier&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><code>Example 02:</code></li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;v-select-container
+        field=&quot;data.module_name&quot;
+        :req=&quot;true&quot;
+        title=&quot;Module name&quot;
+      &gt;
+    &lt;v-select
+      v-model=&quot;data.module_name&quot;
+      label=&quot;name&quot;
+      :reduce=&quot;(obj) =&gt; obj.value&quot;
+      :options=&quot;modules&quot;
+      placeholder=&quot;--Select One--&quot;
+      :closeOnSelect=&quot;true&quot;
+      :req=&quot;true&quot;
+    &gt;&lt;/v-select&gt;
+&lt;/v-select-container&gt;
+
+data(){
+  return{
+     modules: [
+      { name: &quot;Notice&quot;, value: &quot;notice&quot; },
+      { name: &quot;Events&quot;, value: &quot;events&quot; },
+      { name: &quot;News&quot;, value: &quot;news&quot; },
+    ],
+  }
+}
+
+</code></pre></div><h4 id="in-data"><a href="#in-data" class="header-anchor">#</a> In data()</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">data</span><span class="token operator">:</span><span class="token punctuation">{</span>
+             <span class="token literal-property property">button_type</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h1 id="remove-a-specific-button-of-base-table"><a href="#remove-a-specific-button-of-base-table" class="header-anchor">#</a> Remove a specific button of base table:</h1> <p>create a variable and define the routes , then inject it in the data property inside table.</p> <div class="language- extra-class"><pre class="language-text"><code>const routes = {
+  view: &quot;contact.show&quot;,
+  destroy: &quot;contact.destroy&quot;
+};
+
+ table: {
+        columns: tableColumns,
+        routes: routes, // This.
+        datas: [],
+        meta: [],
+        links: []
+      }
+</code></pre></div><h4 id="show-relational-data-in-view-base-table"><a href="#show-relational-data-in-view-base-table" class="header-anchor">#</a> Show relational Data in &quot;View base table&quot;:</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// In view.vue</span>
+ <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">model</span><span class="token operator">:</span> model<span class="token punctuation">,</span>
+      <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">extra_row</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">category</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;category&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">session</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;session&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">member</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;member&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token comment">// committee: [&quot;committee&quot;, [&quot;title&quot;]],</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">fileColumns</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token keyword">in</span> controller show<span class="token operator">:</span>
+  <span class="token keyword">return</span> <span class="token literal-property property">Committee</span><span class="token operator">:</span><span class="token operator">:</span><span class="token keyword">with</span><span class="token punctuation">(</span><span class="token string">'session'</span><span class="token punctuation">,</span><span class="token string">'category'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span>$id<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="view-base-table"><a href="#view-base-table" class="header-anchor">#</a> View Base Table:</h4> <p>Hints: <strong><em><code>View =&gt; ViewPage =&gt; ViewBaseTable</code></em></strong></p> <div class="language- extra-class"><pre class="language-text"><code> data() {
+    return {
+      model: model,
+      data: {},
+      fields: [&quot;id&quot;, &quot;url&quot;], // Which property of data you want to showcase.
+      belongs_to: { // This one is responsible for relational data.
+        data: {}, // Relational data.
+        fields: [&quot;name&quot;], // Which property of data you want to showcase.
+        model: &quot;album&quot;, // This the model which will the url/route redirect.
+      },
+    };
+  },
+
+</code></pre></div><h4 id="filters"><a href="#filters" class="header-anchor">#</a> Filters:</h4> <p>Daily resuable function to manupulate your string.</p> <h4 id="enformat"><a href="#enformat" class="header-anchor">#</a> enFormat()</h4> <p>You can use this global function to format the date as 11 May 2023 for consistency over the project.</p> <div class="language-js extra-class"><pre class="language-js"><code>$filter<span class="token punctuation">.</span><span class="token function">enFormat</span><span class="token punctuation">(</span>history<span class="token punctuation">.</span>login_at<span class="token punctuation">)</span> <span class="token comment">// created_at or updated_at</span>
+</code></pre></div><h4 id="capitalize"><a href="#capitalize" class="header-anchor">#</a> capitalize()</h4> <p>You can capitalize you word.</p> <div class="language-js extra-class"><pre class="language-js"><code>$filter<span class="token punctuation">.</span><span class="token function">capitalize</span><span class="token punctuation">(</span><span class="token string">&quot;sunday&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="networking-in-vue-js"><a href="#networking-in-vue-js" class="header-anchor">#</a> Networking in Vue js:</h3> <p>This section contains the example of using https.</p> <ul><li>Get all Data</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'service?page=1&amp;allData=true'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="global-function"><a href="#global-function" class="header-anchor">#</a> Global Function</h3> <p>CSFD contains various global function to interact with https.</p> <h4 id="get-data"><a href="#get-data" class="header-anchor">#</a> get_data()</h4> <p>First parameter is for url, you can pass whatever you like. then second parameter is for data object,
+where you want to put the data after fetching it in your component.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">get_data</span><span class="token punctuation">(</span><span class="token string">&quot;url&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;data property&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="callapi"><a href="#callapi" class="header-anchor">#</a> callApi()</h4> <p>Call API is responsible for calling the API endpoint with data object. First parameter , is method &quot;GET/POST/PUT/ANY&quot; then your &quot;url&quot; , then the &quot;dataObj&quot;</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">callApi</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> dataObj <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="get-sorting"><a href="#get-sorting" class="header-anchor">#</a> get_sorting()</h4> <p>To get the sorting of any model , you can use this function.
+Namespace :</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">get_sorting</span><span class="token punctuation">(</span>namespace<span class="token punctuation">)</span>
+
+Example <span class="token number">01</span> <span class="token operator">:</span> App\Models\Content will be like <span class="token function">get_sorting</span><span class="token punctuation">(</span><span class="token string">&quot;Content&quot;</span><span class="token punctuation">)</span>&quot;<span class="token punctuation">,</span>
+Example <span class="token number">02</span><span class="token operator">:</span> App\Models\Website\Content will be like <span class="token function">get_sorting</span><span class="token punctuation">(</span><span class="token string">&quot;Website-Content&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="destroy-data"><a href="#destroy-data" class="header-anchor">#</a> destroy_data()</h4> <p>This one is responsible for deleting a resource from the database.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">destroy_data</span><span class="token punctuation">(</span>model_name<span class="token punctuation">,</span> id<span class="token punctuation">,</span> search_data<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+</code></pre></div><h1 id="utility-function"><a href="#utility-function" class="header-anchor">#</a> Utility function:</h1> <p>Utility function contains various utility functions.</p> <h4 id="scrolltop"><a href="#scrolltop" class="header-anchor">#</a> scrollTop()</h4> <p>To modify the scroll behaviour.</p> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">scrollTop</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="print"><a href="#print" class="header-anchor">#</a> print()</h4> <p>Print the html content as pdf.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>elementId<span class="token punctuation">,</span> documentTitle<span class="token punctuation">)</span>
+or
+<span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">&quot;print(elementId, documentTitle)&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+</code></pre></div><h4 id="disable-index-page-base-table-button"><a href="#disable-index-page-base-table-button" class="header-anchor">#</a> Disable Index page base table Button:</h4> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token operator">&lt;</span>index<span class="token operator">-</span>page <span class="token operator">:</span>button<span class="token operator">=</span><span class="token string">&quot;false&quot;</span><span class="token operator">&gt;</span><span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>index<span class="token operator">-</span>page<span class="token operator">&gt;</span>
+</code></pre></div><h4 id="disable-base-table-action-button"><a href="#disable-base-table-action-button" class="header-anchor">#</a> Disable Base table action button:</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token literal-property property">methods</span><span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token function">injectCustomRoute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">this</span><span class="token punctuation">.</span>table<span class="token punctuation">.</span>routes<span class="token punctuation">.</span>edit <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">injectCustomRoute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="watch"><a href="#watch" class="header-anchor">#</a> Watch:</h3> <div class="language- extra-class"><pre class="language-text"><code>watch: {
+    // Nested.
+    &quot;data.has_button&quot;(current, old) {
+      if (current == &quot;No&quot;) {
+        this.data.button_type = &quot;&quot;;
+      }
+    },
+    // Watch on global functionality
+    $route(newRoute, lastRoute) {
+      this.isActiveRoute(this.currentRouteName);
+    },
+  },
+</code></pre></div><h4 id="validation"><a href="#validation" class="header-anchor">#</a> Validation:</h4> <h2 id="vue-js"><a href="#vue-js" class="header-anchor">#</a> Vue.js</h2> <blockquote><p>Vue-Simple Validator `--https://simple-vue-validator.netlify.app/</p></blockquote> <h4 id="a-simple-validation"><a href="#a-simple-validation" class="header-anchor">#</a> A simple validation</h4> <div class="language- extra-class"><pre class="language-text"><code>&quot;data.slider_id&quot;: function (value = null) {
+      return Validator.value(value).required(&quot;Slider is required&quot;);
+    },
+</code></pre></div><h4 id="a-custom-validation"><a href="#a-custom-validation" class="header-anchor">#</a> A custom validation</h4> <div class="language-vue extra-class"><pre class="language-vue"><code>&quot;data.button_type&quot;: function (value = null) { const vm = this; return
+Validator.value(value).custom(function (value) { if (vm.data.has_button ===
+&quot;Yes&quot;) { vm.$toast(&quot;Button type is required&quot;, &quot;warning&quot;); } }); },
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>&quot;data.button_type&quot;: function (value = null) {
+      const vm = this;
+      return Validator.value(value).custom(function (value) {
+        if (vm.data.has_button === &quot;Yes&quot;) {
+          return &quot;Button type is required&quot;;
+        }
+      });
+    },
+</code></pre></div><h4 id="mobile"><a href="#mobile" class="header-anchor">#</a> Mobile:</h4> <div class="language- extra-class"><pre class="language-text"><code>&quot;data.mobile&quot;: function (value = null) {
+      return Validator.value(value)
+        .digit()
+        .regex(&quot;01+[0-9+-]*$&quot;, &quot;Must start with 01.&quot;)
+        .minLength(11)
+        .maxLength(11);
+    },
+</code></pre></div><h4 id="show-validation-error-in-template"><a href="#show-validation-error-in-template" class="header-anchor">#</a> Show validation error in template</h4> <div class="language- extra-class"><pre class="language-text"><code> &lt;span v-if=&quot;validation.hasError('data.category_id')&quot; class=&quot;input-message text-danger&quot;&gt;
+    {{ validation.firstError(&quot;data.has_button&quot;) }}
+&lt;/span&gt;
+
+</code></pre></div><h4 id="multiple-search-input-in-csfd-vue"><a href="#multiple-search-input-in-csfd-vue" class="header-anchor">#</a> Multiple search input in CSFD Vue</h4> <p>ref: <code>admin/index.vue</code></p> <div class="language- extra-class"><pre class="language-text"><code>// In vue template:
+&lt;index-page&gt;
+    &lt;!-- search field --&gt;
+    &lt;template v-slot:search-field&gt;
+      &lt;div class=&quot;col-lg-2&quot;&gt;
+        &lt;select
+          v-model=&quot;search_data.status&quot;
+          @change=&quot;search()&quot;
+          class=&quot;form-select shadow-none&quot;
+        &gt;
+          &lt;option value=&quot;&quot;&gt;All&lt;/option&gt;
+          &lt;option value=&quot;active&quot;&gt;Active&lt;/option&gt;
+          &lt;option value=&quot;deactive&quot;&gt;Deactive&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
+  &lt;/index-page&gt;
+
+   search_data: {
+        pagination: 10,
+        field_name: &quot;name&quot;,
+        value: &quot;&quot;,
+        status: &quot;active&quot;,
+      },
+
+// In controller:
+  $query-&gt;whereAny('status', $request-&gt;status);
+</code></pre></div><h4 id="advance-vue-search"><a href="#advance-vue-search" class="header-anchor">#</a> Advance Vue search:</h4> <p>ref: <code>activity/index.vue</code></p> <h2 id="modal-components"><a href="#modal-components" class="header-anchor">#</a> Modal Components</h2> <p>For ref: <code>@/profile/create.vue</code></p> <h4 id="basic-modal"><a href="#basic-modal" class="header-anchor">#</a> Basic Modal</h4> <p>You can use the basic modal for basic operation of your application. Also, By creating a seperate component,
+your model can be extendable further.</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div class=&quot;col-md-3&quot;&gt;
+    &lt;button @click=&quot;openModal&quot;&gt;Open Modal&lt;/button&gt;
+    &lt;button @click=&quot;closeModal&quot;&gt;Close Modal&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;Modal id=&quot;productModal&quot; name=&quot;Product&quot;&gt;
+    &lt;template v-slot:title&gt;Color&lt;/template&gt;
+    &lt;template v-slot:body&gt;
+        &lt;Input
+        v-model=&quot;data.title&quot;
+        field=&quot;data.title&quot;
+        title=&quot;Title&quot;
+        :req=&quot;true&quot;
+        col=&quot;12&quot;
+        /&gt;
+    &lt;/template&gt;
+    &lt;template v-slot:button&gt;
+        &lt;Button
+        title=&quot;Submit&quot;
+        process=&quot;&quot;
+        @click.prevent=&quot;productStoreModal&quot;
+        /&gt;
+    &lt;/template&gt;
+&lt;/Modal&gt;
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code> methods:{
+    openModal() {
+      $(&quot;#productModal&quot;).modal(&quot;show&quot;);
+    },
+    closeModal() {
+      $(&quot;#productModal&quot;).modal(&quot;hide&quot;);
+    },
+    productStoreModal() {
+      alert(&quot;Submit&quot;);
+    },
+ }
+</code></pre></div><h4 id="inherit-modal"><a href="#inherit-modal" class="header-anchor">#</a> Inherit Modal</h4> <p>This modal is aims to inherit the &quot;create.vue&quot; file in it's body. Sometimes you need to add some data,
+but navigating to different page and add it, which requires extra work.
+To, avoid this, you add any data to any module form a single module.</p> <div class="language- extra-class"><pre class="language-text"><code> &lt;!-------------- Inherit Modal ---------------&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;
+    &lt;button @click=&quot;openInheritModal&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;
+        Open Inherit Modal
+    &lt;/button&gt;
+    &lt;button @click=&quot;closeInheritModal&quot; class=&quot;btn btn-warning btn-sm&quot;&gt;
+        Close Inherit Modal
+    &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;InheritModal id=&quot;faqModal&quot; name=&quot;Faq&quot; type=&quot;modal-xl&quot;&gt;
+    &lt;template v-slot:title&gt;Global Faq Create Page&lt;/template&gt;
+    &lt;template v-slot:body&gt;
+        &lt;faq&gt;&lt;/faq&gt; // The components that you wanna inherit.
+    &lt;/template&gt;
+    &lt;/InheritModal&gt;
+    &lt;!-------------- Inherit Modal ---------------&gt;
+</code></pre></div><h4 id="tooling"><a href="#tooling" class="header-anchor">#</a> Tooling</h4> <ul><li><p>Code format:
+Execute: <code>./vendor/bin/pint</code></p></li> <li><p>Clean the activity log:
+Execute: <code>php artisan activitylog:clean</code></p></li> <li><p>Create Model,Factory,Seeder:
+Execute: <code>php artisan make:model Book -mfs</code></p></li> <li><p>Clear the cache:
+Execute: <code>php artisan optimize:clear</code></p></li></ul> <h4 id="style-guide"><a href="#style-guide" class="header-anchor">#</a> Style Guide</h4> <ul><li><p>Laravel:</p> <h6 id="php-rules"><a href="#php-rules" class="header-anchor">#</a> PHP Rules:</h6> <ul><li>Code style must follow PSR-1, PSR-2 and PSR-12.</li></ul> <h6 id="crud"><a href="#crud" class="header-anchor">#</a> Crud:</h6> <ul><li>Try to keep controllers simple and stick to the default CRUD keywords (index, create, store, show, edit, update, destroy)</li> <li>Avoid something like &quot;userCreate&quot;,&quot;userStore&quot;</li></ul> <h6 id="strings"><a href="#strings" class="header-anchor">#</a> Strings:</h6> <p>When possible prefer string interpolation above sprintf and the . operator.</p> <div class="language- extra-class"><pre class="language-text"><code>$notification = &quot;welcome, {$name}.&quot;;
+</code></pre></div><h6 id="ternary-operators"><a href="#ternary-operators" class="header-anchor">#</a> Ternary operators:</h6> <p>Every portion of a ternary expression should be on its own line unless it's a really short expression.</p> <div class="language- extra-class"><pre class="language-text"><code>$result = $object instanceof Model ?
+$object-&gt;name :
+'A default value';
+</code></pre></div><h6 id="route"><a href="#route" class="header-anchor">#</a> Route:</h6> <ul><li>Public-facing urls must use kebab-case.</li> <li>Route parameters should use camelCase.</li></ul> <div class="language- extra-class"><pre class="language-text"><code>Route::get('user/create',[UserController::class,'index'])-&gt;name('user.create')
+Route::post('users',[UserController::class,'store'])-&gt;name('user.store')
+</code></pre></div></li></ul> <h4 id="reference"><a href="#reference" class="header-anchor">#</a> Reference</h4> <ul><li>Laravel</li> <li>Vue</li> <li>Performance [https://developer.chrome.com/docs/devtools/performance/]</li> <li>Fast Load [https://web.dev/fast/]</li></ul> <h4 id="package"><a href="#package" class="header-anchor">#</a> Package:</h4> <p><code>Vue</code></p> <table><thead><tr><th>Package</th> <th>README</th></tr></thead> <tbody><tr><td>Validator</td> <td>[https://simple-vue-validator.netlify.app/]</td></tr></tbody></table> <p><code>Laravel</code></p> <table><thead><tr><th>Package</th> <th>README</th></tr></thead> <tbody><tr><td>Error</td> <td>[https://github.com/Nogor-Solutions-Ltd/Error]</td></tr> <tr><td>Activity Log</td> <td>[https://github.com/spatie/laravel-activitylog]</td></tr> <tr><td>Croppa</td> <td>[https://github.com/BKWLD/croppa]</td></tr></tbody></table></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/turbo/guide.html" class="prev">
+        Turbo Js
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9d1dbcdb.js" defer></script><script src="/assets/js/2.733019b2.js" defer></script><script src="/assets/js/12.671aa5bb.js" defer></script>
+  </body>
+</html>
