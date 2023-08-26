@@ -1,4 +1,7 @@
-# Manual for CSFD (Customize System for Faster Development)
+---
+title: CSFD Documentation
+---
+
 
 ## Table of Contents
 
