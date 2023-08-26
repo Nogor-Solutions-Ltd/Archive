@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: https://v1.vuepress.vuejs.org/hero.png
-tagline: It&#39;s a mirror of ByteLogs repo
+tagline: Archive
 actionText: Quick Start →
 actionLink: /guide/
 features:
