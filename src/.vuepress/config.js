@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'ByteLogs',
+  title: 'Archive',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -43,7 +43,7 @@ module.exports = {
       },
       {
         text: 'Github',
-        link: 'https://github.com/Muhammad-Sarfaraz/ByteLogs/'
+        link: 'https://github.com/Muhammad-Sarfaraz/Archive/'
       }
     ],
     sidebar: {
