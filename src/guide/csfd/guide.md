@@ -292,6 +292,95 @@ reader.readAsDataURL(value);
 ```
 
 
+# Use Thirdparty Resizer
+
+For ref, please see the news module, migrations.
+
+// In Controller
+
+```php
+
+// In store()
+ $image = $request->image_base64;
+
+if (! empty($image)) {
+    $data['image'] = cloudflare(file: $image, folder: 'news', resizeSize: '600x600,200x200', base64: true);
+}
+
+
+// In update()
+$image = $request->image_base64;
+
+if (! empty($image)) {
+    $data['image'] = cloudflare(file: $image, folder: 'album', resizeSize: '600x600,200x200', base64: true);
+} else {
+    $data['image'] = $news->image;
+}
+
+```
+
+// In Vue
+
+```js
+<template>
+<File
+        title="Image"
+        field="data.original_image"
+        mime="img"
+        fileClassName="file2"
+        :showCrop="true"
+        col="3"
+        vHeight="600"
+        vWidth="600"
+        vSizeInKb="500"
+      />
+
+      <GlobalCrop
+        field="data.original_image"
+        v-on:update:modelValue="data.original_image = $event"
+        :image="image.original_image"
+        :aspectRatio="{ aspectRatio: 600 / 600 }"
+        :minWidth="600"
+        :minHeight="600"
+      ></GlobalCrop>
+      </template>
+      <script>
+        export default{
+             data() {
+    return {
+      model: model,
+      data: {
+      },
+      image: { original_image: "" },
+    };
+  },
+  provide() {
+    return {
+      validate: this.validation,
+      data: () => this.data,
+      image: this.image,
+    };
+  },
+
+  // In Store
+
+  if (res) {
+          var form = document.getElementById("form");
+          var formData = new FormData(form);
+          formData.append("image_base64", this.data.original_image);
+          formData.append("status", this.data.status);
+
+          if (this.data.id) {
+            this.update(this.model, formData, this.data.slug, "image");
+          } else {
+            this.store(this.model, formData);
+          }
+        }
+        }
+      </script>
+```
+
+
 #### Custom Add / Back button
 
 Inside the, template "create-form" , insert it [Your vue file] , and you can modify it via route.
