@@ -380,6 +380,15 @@ if (! empty($image)) {
       </script>
 ```
 
+#### Cloudflare Resizer
+```php
+$arrayOfImage = cloudflare(file: $image, folder: 'news', resizeSize: '600x600,200x200', base64: true);
+```
+#### Image Intervation Resizer
+```php
+ $arrayOfImage = use_intervation(file: $file, folder: $baseFolder, resizeSize: $resizeSize);
+```
+
 
 #### Custom Add / Back button
 
