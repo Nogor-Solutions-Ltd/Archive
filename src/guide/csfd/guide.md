@@ -149,7 +149,7 @@ if (!empty($thumbnail)) {
 
 This section contains resources related `vue.js`.
 
-#### Add a extra button in "Base-Table"
+#### Add a extra / custom button in "Base-Table"
 
 In your index page , inside created() put this code and modify it.
 
@@ -160,7 +160,8 @@ this.table.routes.array = [
     route: "your.route.index",
     icon: "home", // fa fa-[icon]
     class: "text-danger",
-    isQuery: true, // create?id="id"
+    isQuery: true, // create?id="id",
+    isSlug: true, // it will work with item.slug.
   },
 ];
 ```
